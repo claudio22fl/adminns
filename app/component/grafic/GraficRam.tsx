@@ -6,27 +6,30 @@ import Isloading from "../Isloading";
 
 export default function GraficRam({ datos }: any) {
   if (datos === "Cargando datos") {
-    return <Isloading />;
+    return (
+      <div className="text-center w-72 top-20 p-24">
+        <Isloading />
+      </div>
+    );
   }
   const splitdata = datos.split(" ");
   const splitDataFinal = splitdata.filter((servers: string) => servers != "");
-  console.log(datos);
   const data = [
     {
       name: "En uso",
-      value: roundDecimal(Number(splitDataFinal[7] / 1000000), 2),
-    },
-    {
-      name: "Libre",
       value: roundDecimal(Number(splitDataFinal[8] / 1000000), 2),
     },
     {
-      name: "Compartido",
+      name: "Libre",
       value: roundDecimal(Number(splitDataFinal[9] / 1000000), 2),
     },
     {
-      name: "Cache",
+      name: "Compartido",
       value: roundDecimal(Number(splitDataFinal[10] / 1000000), 2),
+    },
+    {
+      name: "Cache",
+      value: roundDecimal(Number(splitDataFinal[11] / 1000000), 2),
     },
   ];
 

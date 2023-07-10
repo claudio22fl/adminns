@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+div:where(.swal2-container).swal2-center>.swal2-popup {
+    width: 47%;
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
+}

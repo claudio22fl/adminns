@@ -1,4 +1,6 @@
-export const mock_Servers = [
+import { Iservers } from "../types/types";
+
+export const mock_Servers: Iservers[] = [
     {
       id: 1,
       ip: "207.244.249.37",
@@ -66,3 +68,12 @@ export const mock_Servers = [
       clave: "LQdg8SxXRFgMyup6",
     },
   ];
+
+  export const mock_ServersTableTH = [
+    {
+      id: 1,
+      ths:[ {id: 'Id', Server: 'Server', Ram: 'Ram',Procesador: 'Procesador', Memoria: 'Memoria',Acciones: 'Acciones'} ],
+    },
+  ];
+
+  

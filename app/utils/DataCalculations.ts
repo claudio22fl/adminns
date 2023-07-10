@@ -5,7 +5,7 @@ export const parseResult = (result: string): FileSystemData[] => {
     const data: FileSystemData[] = [];
   
     // Ignorar la primera línea ya que contiene los nombres de las columnas
-    for (let i = 1; i < lines.length; i++) {
+    for (let i = 1; i < lines.length-4; i++) {
       const line = lines[i].trim();
       const [filesystem, size, used, avail, usePercent, mountedOn] =
         line.split(/\s+/);

@@ -11,11 +11,15 @@ import {
   YAxis,
 } from "recharts";
 import Isloading from "../Isloading";
+import { roundDecimal } from "@/app/utils/RoundDecimal";
 
 export default function GraficMemory({ datos }: any) {
-  console.log(datos);
   if (datos === "Cargando datos") {
-    return <Isloading />;
+    return (
+      <div className="text-center w-72 top-20 p-24">
+        <Isloading />
+      </div>
+    );
   }
 
   try {
@@ -23,12 +27,11 @@ export default function GraficMemory({ datos }: any) {
     const data = [
       {
         name: "Uso de memoria",
-        Utilizado: sumUsed(parsedData),
-        Libre: sumSizes(parsedData) - sumUsed(parsedData),
+        Utilizado: roundDecimal(sumUsed(parsedData), 2),
+        Libre: roundDecimal(sumSizes(parsedData) - sumUsed(parsedData), 2),
       },
     ];
 
-    console.log(sumSizes(parsedData));
     return (
       <ResponsiveContainer width={300} height={300}>
         <BarChart

@@ -6,21 +6,24 @@ import Isloading from "../Isloading";
 
 export default function GraficCpu({ datos }: any) {
   if (datos === "Cargando datos") {
-    return <Isloading />;
+    return (
+      <div className="text-center w-72 top-20 p-24">
+        <Isloading />
+      </div>
+    );
   }
 
   const splitdata = datos.split(" ");
   const splitDataFinal = splitdata.filter((servers: string) => servers != "");
-  console.log(datos);
 
   const data = [
     {
       name: "En uso",
-      value: roundDecimal(Number(splitDataFinal[20]), 2),
+      value: roundDecimal(Number(splitDataFinal[22]), 2),
     },
     {
       name: "Libre",
-      value: roundDecimal(Number(splitDataFinal[29]), 2),
+      value: roundDecimal(Number(splitDataFinal[31].slice(0, 4)), 2),
     },
   ];
 

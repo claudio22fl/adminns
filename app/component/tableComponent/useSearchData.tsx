@@ -26,7 +26,8 @@ export const useSearchData = (posts: ISim[]) => {
           numerosimMatch ||
           simMatch ||
           clienteMatch ||
-          correoMatch
+          correoMatch ||
+          empresaMatch
         );
       })
     );

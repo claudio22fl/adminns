@@ -12,12 +12,13 @@ export const useSearchData = (posts: ISim[]) => {
 
     setFilterData(
       posts.filter((sims: ISim) => {
-        const { numero, numerosim, sim, cliente, correo } = sims;
+        const { numero, numerosim, sim, cliente, correo, empresa } = sims;
         const numeroMatch = numero.toString().includes(searchSims);
         const numerosimMatch = numerosim.toString().includes(searchSims);
         const simMatch = sim.toString().includes(searchSims);
         const clienteMatch = cliente.toString().includes(searchSims);
         const correoMatch = correo.toString().includes(searchSims);
+        const empresaMatch = empresa.toString().includes(searchSims);
 
         return (
           numeroMatch ||

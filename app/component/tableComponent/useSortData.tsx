@@ -22,7 +22,7 @@ export const useSortData = (
       const dateb = new Date(b[`vencimiento`]);
       const differenceInMillisecondsA = datea.getTime() - date1.getTime();
       const differenceInMillisecondsB = dateb.getTime() - date1.getTime();
-
+      type ISimKey = keyof typeof a;
       const nameA = Math.floor(
         differenceInMillisecondsA / (1000 * 60 * 60 * 24)
       );
@@ -30,12 +30,12 @@ export const useSortData = (
         differenceInMillisecondsB / (1000 * 60 * 60 * 24)
       );
       if (dato !== "Diaavencer") {
-        const nameA = a[dato];
-        const nameB = b[dato];
+        const nameA = a[dato as ISimKey];
+        const nameB = b[dato as ISimKey];
 
-        if (nameA > nameB) {
+        if (!nameA > !nameB) {
           return newSortAsc ? -1 : 1;
-        } else if (nameA < nameB) {
+        } else if (!nameA < !nameB) {
           return newSortAsc ? 1 : -1;
         } else {
           return 0;

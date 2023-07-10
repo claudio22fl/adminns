@@ -70,7 +70,7 @@ export async function updateSims(
             });
 
             const response = await fetch(
-              `http://naowgroup.cl/api/chips/${id}`,
+              `https://naowgroup.cl/api/chips/${id}`,
               {
                 method: "PUT",
                 headers: {

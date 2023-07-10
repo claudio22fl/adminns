@@ -26,7 +26,7 @@ export const useFormCreate = ({ refreshTable, formData, setFormData }: any) => {
     date1.setMonth(date1.getMonth() + Number(1));
     console.log(formData);
     try {
-      const response = await fetch("http://naowgroup.cl/api/chips", {
+      const response = await fetch("https://naowgroup.cl/api/chips", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

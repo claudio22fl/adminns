@@ -33,7 +33,7 @@ export async function renewSims(
             const hernes = editarDato(id, "vencimiento", vencimiento);
 
             const response = await fetch(
-              `http://naowgroup.cl/api/chips/${id}`,
+              `https://naowgroup.cl/api/chips/${id}`,
               {
                 method: "PUT",
                 headers: {

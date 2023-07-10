@@ -26,7 +26,7 @@ export const useFetchSims = () => {
   });
 
   const fetchsims = async () => {
-    const response = await fetch("http://naowgroup.cl/api/chips", {
+    const response = await fetch("https://naowgroup.cl/api/chips", {
       cache: "no-store",
       mode: "cors",
     });

@@ -19,7 +19,7 @@ export default function Isloading() {
           fill="currentFill"
         />
       </svg>
-      <span className="sr-only">Loading...</span>
+      <span className="sr-only">Loadings...</span>
     </div>
   );
 }

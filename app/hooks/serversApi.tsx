@@ -9,7 +9,7 @@ export async function executeCommand(
   commandInput: string
 ) {
   const response = await fetch(
-    `https://ssh.chileaccesorios.com/execute-command?command=${commandInput}&url=${ip}&clave=${clave}`,
+    `https://chileaccesoriosv2.com/execute-command?command=${commandInput}&url=${ip}&clave=${clave}`,
     {
       method: "GET",
       mode: "cors",
@@ -28,7 +28,7 @@ export async function executeCommand(
 }
 export async function validateBackups(ip: string, clave: string) {
   const response = await fetch(
-    `https://ssh.chileaccesorios.com/execute-command?command=ls -l /data/backups/&url=${ip}&clave=${clave}`,
+    `https://chileaccesoriosv2.com/execute-command?command=ls -l /data/backups/&url=${ip}&clave=${clave}`,
     {
       method: "GET",
       mode: "cors",

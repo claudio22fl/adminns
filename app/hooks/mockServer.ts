@@ -1,6 +1,12 @@
 import { Iservers } from "../types/types";
 
 export const mock_Servers: Iservers[] = [
+     {
+      id:0,
+      ip: "207.244.245.146",
+      name: "GPSMundo",
+      clave: "LQdg8SxXRFgMyup6",
+    },
     {
       id: 1,
       ip: "207.244.249.37",

@@ -24,17 +24,24 @@ export const parseResult = (result: string): FileSystemData[] => {
   };
   
   export const sumSizes = (data: FileSystemData[]): number => {
-    let totalSize = 0;
-  
-    for (const item of data) {
-      if (item.size.includes("G")) {
-        // Eliminar el sufijo 'G' de los tamaños y convertirlos a números
-        const size = parseFloat(item.size.replace("G", ""));
-        totalSize += size;
-      }
+      let totalSize = 0;
+
+  for (const item of data) {
+    let size = 0;
+
+    // Verificar si el tamaño contiene 'G' o 'T'
+    if (item.size.includes("G")) {
+      // Eliminar el sufijo 'G' y convertir a número
+      size = parseFloat(item.size.replace("G", ""));
+    } else if (item.size.includes("T")) {
+      // Eliminar el sufijo 'T' y convertir a número, multiplicar por 1000
+      size = parseFloat(item.size.replace("T", "")) * 1000;
     }
-  
-    return totalSize;
+
+    totalSize += size;
+  }
+
+  return totalSize;
   };
   
   export const sumUsed = (data: FileSystemData[]): number => {
